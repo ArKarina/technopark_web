@@ -1,0 +1,159 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sticky Footer Navbar Template · Bootstrap v5.2</title>
+
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/style.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Fixed navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+
+    <!-- .container>.row>.col-8+.col-4 -->
+    <div class="container">
+        <h1>New questions</h1>
+        <div class="row">
+            <div class="col-8">
+
+                <div class="question">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="avatar">
+                                <img src="../static/img/avatar_1.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <h2 class="question-title">Question 1</h2>
+                            <!-- question-text -->
+                            <div class="question-text">
+                                <!-- lorem20 -->
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque eaque repellendus sed tenetur vero. Animi culpa iusto mollitia nisi?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="avatar">
+                                <img src="../static/img/avatar_2.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <h2 class="question-title">Question 2</h2>
+                            <!-- question-text -->
+                            <div class="question-text">
+                                <!-- lorem20 -->
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque eaque repellendus sed tenetur vero. Animi culpa iusto mollitia nisi?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="avatar">
+                                <img src="../static/img/avatar_3.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <h2 class="question-title">Question 3</h2>
+                            <!-- question-text -->
+                            <div class="question-text">
+                                <!-- lorem20 -->
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores, dignissimos eaque fugit in ipsam libero qui quis rerum unde!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <h2>Popular Tags</h2>
+                <div class="row tags">
+                    <p><a href="{% url 'tags' 'Study' %}">Study</a></p>
+                    <p><a href="{% url 'tags' 'Music' %}">Music</a></p>
+                    <p><a href="{% url 'tags' 'Art' %}">Art</a></p>
+                    <p><a href="{% url 'tags' 'Sport' %}">Sport</a></p>
+                </div>
+                <h3>Best Members</h3>
+                <div class="row tags">
+                    <p><a href="{% url 'members' 'Alina' %}">Alina</a></p>
+                    <p><a href="{% url 'members' 'qwerty' %}">qwerty</a></p>
+                    <p><a href="{% url 'members' 'Dima' %}">Dima</a></p>
+                    <p><a href="{% url 'members' 'Vlad' %}">LoveKarinaLove</a></p>
+                    <p><a href="{% url 'members' 'Anton' %}">Anton</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+</footer>
+
+
+<script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
