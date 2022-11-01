@@ -23,25 +23,11 @@
                 </form>
             </div>
 
-            <div class="col-4">
+            <div class="col-2">
                 <div class="user">
-                    <div class="row">
-                        <div class="col-2">
-                            <div class="avatar">
-                                <img src="../static/img/avatar_1.jpg" alt="" />
-                            </div>
-                        </div>
-                        <div class="col-10 user-info">
-                            <div class="username">
-                                <div>Karina Anokhina</div>
-                            </div>
-                            <div class="row">
-                                <p>
-                                    <a href="#">settings</a>
-                                    <a href="#">log out</a>
-                                </p>
-                            </div>
-                        </div>
+                    <div class="links">
+                        <a href="#">log in</a>
+                        <a href="#">register</a>
                     </div>
                 </div>
             </div>
@@ -51,10 +37,47 @@
 
 <main class="flex-shrink-0">
     <div class="container">
-        <h1>New questions</h1>
         <div class="row">
+            <h1>Log In</h1>
             <div class="col-8">
-
+                <form class="question-form">
+                    <div class="row">
+                        <div class="col-2">
+                            <label for="validationServer01" class="form-label">Login</label>
+                        </div>
+                        <div class="col-5">
+                            <input type="text" class="form-control is-valid" id="validationServer01"
+                                   value="karina" required placeholder="Enter your login...">
+                            <p class="valid-feedback">
+                                Correct!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label for="validationServer01" class="form-label">Password</label>
+                        </div>
+                        <div class="col-5">
+                            <input type="password" class="form-control is-invalid" id="validationServer02"
+                                   value="karina123" required placeholder="Enter your password...">
+                            <p class="invalid-feedback">
+                                Wrong password!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-10">
+                            <button class="btn btn-success" type="submit">Log in!</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-10" style="margin-top: 10px">
+                            <a href="#">Create new account</a>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="col-4">
                 <div class="header">
