@@ -23,11 +23,25 @@
                 </form>
             </div>
 
-            <div class="col-2">
+            <div class="col-4">
                 <div class="user">
-                    <div class="links">
-                        <a href="login.html">log in</a>
-                        <a href="signup.html">register</a>
+                    <div class="row-two-elems">
+                        <div class="col-2">
+                            <div class="avatar">
+                                <img src="../static/img/avatar_1.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="col-10 user-info">
+                            <div class="username">
+                                <div>Karina Anokhina</div>
+                            </div>
+                            <div class="row">
+                                <p>
+                                    <a href="settings.html">settings</a>
+                                    <a href="#">log out</a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -37,37 +51,13 @@
 
 <main class="flex-shrink-0">
     <div class="container">
+        <div class="row-two-elems">
+            <div class="row">
+                <h1>Tag: Study</h1>
+            </div>
+        </div>
         <div class="row">
             <div class="col-8">
-                <div class="row one-question">
-                    <div class="col-2">
-                        <div class="avatar">
-                            <img src="../static/img/avatar_1.jpg" alt="" />
-                        </div>
-                        <div class="input-group rating">
-                            <input type="text" class="form-control" value="5">
-                            <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Vertical radio toggle button group">
-                                <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio-like" autocomplete="off" checked>
-                                <label class="btn btn-outline-success" for="vbtn-radio-like">Like</label>
-                                <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio-dislike" autocomplete="off">
-                                <label class="btn btn-outline-danger" for="vbtn-radio-dislike">Dislike</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-10">
-                        <h2 class="question-title">Question 1</h2>
-                        <label class="question-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis est modi neque nostrum possimus quidem! Autem blanditiis, deleniti excepturi ipsa magni, nesciunt, optio perspiciatis porro quisquam saepe sint vitae voluptas? Accusamus, aut cupiditate deleniti dolore ducimus ea eius expedita, explicabo itaque odit quidem quo repellat repudiandae sapiente similique soluta suscipit! Adipisci cumque eaque inventore odit velit veritatis voluptate!
-                        </label>
-                        <div class="links">
-                            <div>
-                                <span>Tags:</span>
-                                <span><a href="#">Study</a></span>
-                                <span><a href="tag.html">Puthon</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="question">
                     <div class="row">
                         <div class="col-2">
@@ -85,15 +75,19 @@
                             </div>
                         </div>
                         <div class="col-10">
-                            <h2 class="question-title">Answer 1</h2>
+                            <h2 class="question-title">Question 1</h2>
                             <!-- question-text -->
                             <label class="question-text">
                                 <!-- lorem20 -->
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque eaque repellendus sed tenetur vero. Animi culpa iusto mollitia nisi?
                             </label>
-                            <div class="rating">
-                                <input class="form-check-input" type="checkbox" value="" checked>
-                                <label>Correct!</label>
+                            <div class="links">
+                                <span><a href="question.html">answer(3)</a></span>
+                                <div>
+                                    <span>Tags:</span>
+                                    <span><a href="#">Study</a></span>
+                                    <span><a href="tag.html">Puthon</a></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -116,13 +110,19 @@
                             </div>
                         </div>
                         <div class="col-10">
-                            <h2 class="question-title">Answer 2</h2>
+                            <h2 class="question-title">Question 2</h2>
+                            <!-- question-text -->
                             <label class="question-text">
+                                <!-- lorem20 -->
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque eaque repellendus sed tenetur vero. Animi culpa iusto mollitia nisi?
                             </label>
-                            <div class="rating">
-                                <input class="form-check-input" type="checkbox" value="">
-                                <label>Correct!</label>
+                            <div class="links">
+                                <span><a href="question.html">answer(3)</a></span>
+                                <div>
+                                    <span>Tags:</span>
+                                    <span><a href="#">Study</a></span>
+                                    <span><a href="tag.html">Puthon</a></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -145,31 +145,23 @@
                             </div>
                         </div>
                         <div class="col-10">
-                            <h2 class="question-title">Answer 3</h2>
+                            <h2 class="question-title">Question 3</h2>
                             <!-- question-text -->
                             <label class="question-text">
                                 <!-- lorem20 -->
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque eaque repellendus sed tenetur vero. Animi culpa iusto mollitia nisi?
                             </label>
-                            <div class="rating">
-                                <input class="form-check-input" type="checkbox" value="">
-                                <label>Correct!</label>
+                            <div class="links">
+                                <span><a href="question.html">answer(3)</a></span>
+                                <div>
+                                    <span>Tags:</span>
+                                    <span><a href="#">Study</a></span>
+                                    <span><a href="tag.html">Puthon</a></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <form class="answer-form">
-                    <div class="row form-elem">
-                        <textarea class="form-control is-invalid" id="validationTextarea"
-                                  placeholder="Enter your answer here..." required
-                                  style="min-height: 300px;"></textarea>
-                        <div class="invalid-feedback">
-                            Enter your answer in the textarea...
-                        </div>
-                    </div>
-                    <button class="btn btn-success" type="submit">Answer</button>
-                </form>
 
                 <ul class="pagination">
                     <li class="page-item">

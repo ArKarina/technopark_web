@@ -23,11 +23,25 @@
                 </form>
             </div>
 
-            <div class="col-2">
+            <div class="col-4">
                 <div class="user">
-                    <div class="links">
-                        <a href="login.html">log in</a>
-                        <a href="signup.html">register</a>
+                    <div class="row-two-elems">
+                        <div class="col-2">
+                            <div class="avatar">
+                                <img src="../static/img/avatar_1.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="col-10 user-info">
+                            <div class="username">
+                                <div>Karina Anokhina</div>
+                            </div>
+                            <div class="row">
+                                <p>
+                                    <a href="settings.html">settings</a>
+                                    <a href="#">log out</a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -37,8 +51,12 @@
 
 <main class="flex-shrink-0">
     <div class="container">
+        <div class="row-two-elems">
+            <div class="row">
+                <h1>Settings: Karina Anokhina</h1>
+            </div>
+        </div>
         <div class="row">
-            <h1>Registration</h1>
             <div class="col-8">
                 <form class="question-form">
                     <div class="row form-elem">
@@ -51,16 +69,13 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row form-elem">
                         <div class="col-2">
                             <label for="validationServer02" class="form-label">Email</label>
                         </div>
                         <div class="col-5">
-                            <input type="email" class="form-control is-invalid" id="validationServer02"
+                            <input type="email" class="form-control is-valid" id="validationServer02"
                                    value="qwe@bk.ru" required placeholder="Enter your email...">
-                            <p class="invalid-feedback">
-                                This email address already registered!
-                            </p>
                         </div>
                     </div>
 
@@ -74,34 +89,12 @@
                         </div>
                     </div>
 
-                    <div class="row form-elem">
-                        <div class="col-2">
-                            <label for="validationServer04" class="form-label">Password</label>
-                        </div>
-                        <div class="col-5">
-                            <input type="password" class="form-control is-valid" id="validationServer04"
-                                   value="karina" required placeholder="Enter your password...">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-2">
-                            <label for="validationServer05" class="form-label">Repeat password</label>
-                        </div>
-                        <div class="col-5">
-                            <input type="password" class="form-control is-invalid" id="validationServer05"
-                                   value="karina" required placeholder="Enter your password again...">
-                            <p class="invalid-feedback">
-                                Passwords don't match!
-                            </p>
-                        </div>
-                    </div>
-
                     <div class="row form-elem" style="margin-bottom: 10px;">
                         <div class="col-2">
                             <label for="validationServer06" class="form-label">Upload avatar</label>
                         </div>
                         <div class="col-5">
+                            <img src="../static/img/avatar_1.jpg" style="width:120px; height:120px;"/>
                             <input type="file" class="form-control is-valid" id="validationServer06" name="photo"
                                    multiple accept="image/*,image/jpeg">
                         </div>
@@ -110,12 +103,11 @@
                     <div class="row">
                         <div class="col-2"></div>
                         <div class="col-10">
-                            <button class="btn btn-success" type="submit">Register!</button>
+                            <button class="btn btn-success" type="submit">Save</button>
                         </div>
                     </div>
 
                 </form>
-
             </div>
             <div class="col-4">
                 <div class="header">
