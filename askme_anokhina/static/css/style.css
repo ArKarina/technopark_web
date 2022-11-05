@@ -1,5 +1,5 @@
 .container {
-    padding: 100px 15px 0;
+    padding: 110px 15px 0;
 }
 
 .question {
@@ -77,4 +77,10 @@ img {
 
 .form-elem{
     padding-bottom: 20px;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    color: black;
 }
