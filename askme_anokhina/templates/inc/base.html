@@ -1,12 +1,15 @@
 <!doctype html>
+
+{% load static %}
+
 <html lang="en" class="h-100">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AskMe</title>
 
-    <link href="../static/css/bootstrap.css" rel="stylesheet">
-    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="{% static "/css/bootstrap.css" %}" rel="stylesheet">
+    <link href="{% static "/css/style.css" %}" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -14,7 +17,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
             <div class="col-2">
-                <a class="navbar-brand" href="base.html">AskMe</a>
+                <a class="navbar-brand" href="{% url 'index' %}">AskMe</a>
             </div>
             <div class="col-6">
                 <form class="d-flex" role="search">
@@ -24,11 +27,12 @@
             </div>
 
             <div class="col-4">
+                {% if is_auth %}
                 <div class="user">
-                    <div class="row">
+                    <div class="row-two-elems">
                         <div class="col-2">
                             <div class="avatar">
-                                <img src="../static/img/avatar_1.jpg" alt="" />
+                                <img src="{% static "/img/avatar_1.jpg" %}" alt="" />
                             </div>
                         </div>
                         <div class="col-10 user-info">
@@ -37,13 +41,21 @@
                             </div>
                             <div class="row">
                                 <p>
-                                    <a href="settings.html">settings</a>
-                                    <a href="#">log out</a>
+                                    <a href="{% url 'settings' %}">settings</a>
+                                    <a href="{% url 'login' %}">log out</a>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% else %}
+                <div class="user">
+                    <div class="links">
+                        <a href="{% url 'login' %}">log in</a>
+                        <a href="{% url 'signup' %}">register</a>
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
     </nav>
@@ -51,10 +63,10 @@
 
 <main class="flex-shrink-0">
     <div class="container">
-        <h1>New questions</h1>
         <div class="row">
             <div class="col-8">
-
+                {% block content %}
+                {% endblock content %}
             </div>
             <div class="col-4">
                 <div class="header">
@@ -62,29 +74,29 @@
                 </div>
                 <div class="row tags">
                     <p>
-                        <a href="{% url 'tags' 'Study' %}">Study</a>
-                        <a href="{% url 'tags' 'Python' %}" style="color:rgb(200, 0, 0)">Python</a>
-                        <a href="{% url 'tags' 'C++' %}">C++</a>
+                        <a href="{% url 'tag' 'Study' %}">Study</a>
+                        <a href="{% url 'tag' 'Python' %}" style="color:rgb(200, 0, 0)">Python</a>
+                        <a href="{% url 'tag' 'C++' %}">C++</a>
                     </p>
                     <p>
-                        <a href="{% url 'tags' 'Music' %}">Music</a>
-                        <a href="{% url 'tags' 'Opera' %}" style="color:rgb(255, 130, 70)">Opera</a>
+                        <a href="{% url 'tag' 'Music' %}">Music</a>
+                        <a href="{% url 'tag' 'Opera' %}" style="color:rgb(255, 130, 70)">Opera</a>
                     </p>
                     <p>
-                        <a href="{% url 'tags' 'Art' %}" style="color:rgb(0, 150, 0)">Art</a>
-                        <a href="{% url 'tags' 'Colors' %}">Colors</a>
-                        <a href="{% url 'tags' 'Gallery' %}" style="color:rgb(255, 90, 200)">Gallery</a>
-                        <a href="{% url 'tags' 'Painters' %}">Painters</a>
+                        <a href="{% url 'tag' 'Art' %}" style="color:rgb(0, 150, 0)">Art</a>
+                        <a href="{% url 'tag' 'Colors' %}">Colors</a>
+                        <a href="{% url 'tag' 'Gallery' %}" style="color:rgb(255, 90, 200)">Gallery</a>
+                        <a href="{% url 'tag' 'Painters' %}">Painters</a>
                     </p>
-                    <p><a href="{% url 'tags' 'Sport' %}">Sport</a></p>
+                    <p><a href="{% url 'tag' 'Sport' %}">Sport</a></p>
                 </div>
                 <h3>Best Members</h3>
                 <div class="row tags">
-                    <p><a href="{% url 'members' 'Alina' %}">Alina</a></p>
-                    <p><a href="{% url 'members' 'qwerty' %}">qwerty</a></p>
-                    <p><a href="{% url 'members' 'Dima' %}">Dima</a></p>
-                    <p><a href="{% url 'members' 'Vlad' %}">Karina</a></p>
-                    <p><a href="{% url 'members' 'Anton' %}">Anton</a></p>
+                    <p><a href="#">Alina</a></p>
+                    <p><a href="#">qwerty</a></p>
+                    <p><a href="#">Dima</a></p>
+                    <p><a href="#">Karina</a></p>
+                    <p><a href="#">Anton</a></p>
                 </div>
             </div>
         </div>

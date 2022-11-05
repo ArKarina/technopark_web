@@ -1,0 +1,8 @@
+<div>
+    {% if question.tags %}
+        <span>Tags:</span>
+        {% for tag in question.tags %}
+            <span><a href="{% url 'tag' tag %}">{{ tag }}</a></span>
+        {% endfor %}
+    {% endif %}
+</div>

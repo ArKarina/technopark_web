@@ -1,0 +1,26 @@
+{% load static %}
+
+<div class="question">
+    <div class="row">
+        <div class="col-2">
+            <div class="avatar">
+                <img src="{% static "/img/avatar_1.jpg" %}" alt="" />
+            </div>
+            {% with rating=question.rating %}
+                {% include 'inc/rating.html' %}
+            {% endwith %}
+        </div>
+        <div class="col-10">
+            <h2 class="question-title">
+                <a href="{% url 'question' question_id=question.id %}">{{ question.title }}</a>
+            </h2>
+            <label class="question-text">
+                {{ question.text }}
+            </label>
+            <div class="links">
+                <span><a href="{% url 'question' question_id=question.id %}">answer({{ question.answers_number }})</a></span>
+                {% include 'inc/tags.html' %}
+            </div>
+        </div>
+    </div>
+</div>
