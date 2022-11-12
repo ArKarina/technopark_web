@@ -11,13 +11,14 @@ def paginate(objects_list, request, per_page=10):
     page = paginator.get_page(page_number)
     return page
 
-#@require_GET
+@require_GET
 def index(request):
     page = paginate(models.QUESTIONS, request, 4)
     context = {'is_auth': False, 'page': page}
     return render(request, 'index.html', context=context)
 
 def question(request, question_id: int):
+    if question_id > 9: question_id = 9
     question_item = models.QUESTIONS[question_id]
     page = paginate(models.ANSWERS, request, 4)
     context = {'question': question_item, 'is_auth': False, 'page': page}
@@ -39,5 +40,6 @@ def settings(request):
     return render(request, 'settings.html', context=context)
 
 def tag(request, tag_name: str):
-    context = {'is_auth': False, 'questions': models.QUESTIONS, 'tag': tag_name}
+    page = paginate([q for q in models.QUESTIONS if tag_name in q['tags']], request, 4)
+    context = {'is_auth': False, 'tag': tag_name, 'page': page}
     return render(request, 'tag.html', context=context)

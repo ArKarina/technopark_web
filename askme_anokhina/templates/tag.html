@@ -4,12 +4,8 @@
 
 <h1>Tag: {{tag}}</h1>
 
-{% for question in questions %}
-    {% for question_tag in question.tags %}
-        {% if question_tag == tag %}
-            {% include "inc/question_item.html"%}
-        {% endif %}
-    {% endfor %}
+{% for question in page.object_list %}
+    {% include 'inc/question_item.html' %}
 {% endfor %}
 
 {% include 'inc/paginator.html' %}
