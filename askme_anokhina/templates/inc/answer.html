@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-2">
             <div class="avatar">
-                <img src={% static 'img/avatar_2.jpg' %} alt="" />
+                <img src="{{ answer.author.avatar.url }}" alt="" />
             </div>
             {% with rating=answer.rating %}
                 {% include 'inc/rating.html' %}

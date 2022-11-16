@@ -73,6 +73,9 @@
                     <h2>Popular Tags</h2>
                 </div>
                 <div class="row tags">
+                    {% for tag in popular_tags %}
+                        <span><a href="{% url 'tag' tag %}">{{ tag }}</a></span>
+                    {% endfor %}
                     <p>
                         <a href="{% url 'tag' 'Study' %}">Study</a>
                         <a href="{% url 'tag' 'Python' %}" style="color:rgb(200, 0, 0)">Python</a>

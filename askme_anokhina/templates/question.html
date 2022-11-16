@@ -6,7 +6,7 @@
 <div class="row one-question">
     <div class="col-2">
         <div class="avatar">
-            <img src="{% static '/img/avatar_1.jpg' %}" alt="" />
+            <img src="{{ question.author.avatar.url }}" alt="" />
         </div>
         {% with rating=question.rating %}
             {% include "inc/rating.html" %}
