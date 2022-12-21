@@ -1,56 +1,18 @@
 {% extends "inc/base.html" %}
+{% load bootstrap5 %}
 
 {% block content %}
 
-<form class="question-form">
-    <div class="row form-elem">
-        <div class="col-2">
-            <label for="validationServer01" class="form-label">Login</label>
-        </div>
-        <div class="col-5">
-            <input type="text" class="form-control is-valid" id="validationServer01"
-                   value="karina" required placeholder="Enter your login...">
-        </div>
-    </div>
-
-    <div class="row form-elem">
-        <div class="col-2">
-            <label for="validationServer02" class="form-label">Email</label>
-        </div>
-        <div class="col-5">
-            <input type="email" class="form-control is-valid" id="validationServer02"
-                   value="qwe@bk.ru" required placeholder="Enter your email...">
-        </div>
-    </div>
-
-    <div class="row form-elem">
-        <div class="col-2">
-            <label for="validationServer03" class="form-label">NickName</label>
-        </div>
-        <div class="col-5">
-            <input type="text" class="form-control is-valid" id="validationServer03"
-                   value="karina" required placeholder="Enter your nickname...">
-        </div>
-    </div>
-
-    <div class="row form-elem" style="margin-bottom: 10px;">
-        <div class="col-2">
-            <label for="validationServer06" class="form-label">Upload avatar</label>
-        </div>
-        <div class="col-5">
-            <img src="../static/img/avatar_1.jpg" style="width:120px; height:120px;"/>
-            <input type="file" class="form-control is-valid" id="validationServer06" name="photo"
-                   multiple accept="image/*,image/jpeg">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-10">
-            <button class="btn btn-success" type="submit">Save</button>
-        </div>
-    </div>
-
+<h6>Settings</h6>
+<form action="/settings" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% if user.profile.avatar %}
+        <img src="{{ user.profile.avatar.url }}" style="width: 120px" alt="" />
+        <br>
+    {% endif %}
+    <br>
+    <button class="btn btn-success" type="submit">Save</button>
 </form>
 
 {% endblock content %}

@@ -1,41 +1,13 @@
 {% extends "inc/base.html" %}
+{% load bootstrap5 %}
 
 {% block content %}
 
-<form class="question-form">
-    <div class="row form-elem">
-        <div class="col-2">
-            <label for="validationServer01" class="form-label">Login</label>
-        </div>
-        <div class="col-5">
-            <input type="text" class="form-control is-valid" id="validationServer01"
-            placeholder="karina" required placeholder="Enter your login...">
-        </div>
-    </div>
-    <div class="row ">
-        <div class="col-2">
-            <label for="validationServer01" class="form-label">Password</label>
-        </div>
-        <div class="col-5">
-            <input type="password" class="form-control is-invalid" id="validationServer02"
-            placeholder="karina123" required placeholder="Enter your password...">
-            <p class="invalid-feedback">
-                Wrong password!
-            </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-10">
-            <button class="btn btn-success" type="submit">Log in!</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-10" style="margin-top: 10px">
-            <a href="{% url 'signup' %}">Create new account</a>
-        </div>
-    </div>
+<form class="question-form" novalidate action="/login" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button class="btn btn-success" type="submit">Log in!</button>
 </form>
+<a href="{% url 'signup' %}">Create new account</a>
 
 {% endblock content %}

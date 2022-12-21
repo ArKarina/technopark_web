@@ -1,5 +1,5 @@
 {% extends "inc/base.html" %}
-
+{% load bootstrap5 %}
 {% load static %}
 {% block content %}
 
@@ -8,7 +8,7 @@
         <div class="avatar">
             <img src="{{ question.author.avatar.url }}" alt="" />
         </div>
-        {% with rating=question.rating %}
+        {% with item=question%}
             {% include "inc/rating.html" %}
         {% endwith %}
     </div>
@@ -29,15 +29,10 @@
 
 {% include 'inc/paginator.html' %}
 
-<form class="answer-form">
-    <div class="row form-elem">
-        <textarea class="form-control is-invalid" id="validationTextarea"
-                  placeholder="Enter your answer here..." required
-                  style="min-height: 300px;"></textarea>
-        <div class="invalid-feedback">
-            Enter your answer in the textarea...
-        </div>
-    </div>
+<h3 class="mt-5">Create your answer</h3>
+<form novalidate action="/question/{{ question.id }}" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
     <button class="btn btn-success" type="submit">Answer</button>
 </form>
 

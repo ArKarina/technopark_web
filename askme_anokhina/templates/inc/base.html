@@ -27,22 +27,24 @@
             </div>
             <a class="btn btn-outline-success" href="{% url 'ask' %}" role="button">ASK!</a>
             <div class="col-4">
-                {% if is_auth %}
+                {% if user.is_authenticated %}
                 <div class="user">
                     <div class="row-two-elems">
                         <div class="col-2">
                             <div class="avatar">
-                                <img src="{% static "/img/avatar_1.jpg" %}" alt="" />
+                                {% if user.profile.avatar %}
+                                    <img src="{{ user.profile.avatar.url }}" alt="" />
+                                {% endif %}
                             </div>
                         </div>
                         <div class="col-10 user-info">
                             <div class="username">
-                                <div>Karina Anokhina</div>
+                                <div>{{ user.username }}</div>
                             </div>
                             <div class="row">
                                 <p>
                                     <a href="{% url 'settings' %}">settings</a>
-                                    <a href="{% url 'login' %}">log out</a>
+                                    <a href="{% url 'logout' %}">log out</a>
                                 </p>
                             </div>
                         </div>
@@ -105,6 +107,10 @@
         </div>
     </div>
 </main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="{% static "/js/main.js" %}"></script>
+<script> var csrftoken = '{{ csrf_token }}' </script>
 
 <footer class="footer mt-auto py-3 bg-light">
     <div class="container">

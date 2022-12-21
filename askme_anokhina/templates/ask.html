@@ -1,44 +1,12 @@
 {% extends "inc/base.html" %}
+{% load bootstrap5 %}
 
 {% block content %}
 
-<form class="question-form">
-    <div class="row form-elem">
-        <div class="col-1">
-            <label for="validationServer01" class="form-label">Title</label>
-        </div>
-        <div class="col-11">
-            <input type="text" class="form-control is-valid" id="validationServer01"
-            placeholder="What to ask?" required placeholder="Enter the title of the question...">
-        </div>
-    </div>
-    <div class="row form-elem">
-        <div class="col-1">
-            <label for="validationTextarea" class="form-label">Text</label>
-        </div>
-        <div class="col-11">
-                <textarea class="form-control is-invalid" id="validationTextarea"
-                          placeholder="Describe your question..." required style="min-height: 300px;"></textarea>
-            <div class="invalid-feedback">
-                Enter your question in the textarea.
-            </div>
-        </div>
-    </div>
-    <div class="row form-elem">
-        <div class="col-1">
-            <label for="validationServer01" class="form-label">Tags</label>
-        </div>
-        <div class="col-11">
-            <input type="text" class="form-control is-valid" id="validationServer02"
-            placeholder="Study, Python" required placeholder="Enter some tags...">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-11">
-            <button class="btn btn-success" type="submit">ASK!</button>
-        </div>
-    </div>
+<form class="question-form" novalidate action="/ask" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button class="btn btn-success" type="submit">ASK!</button>
 </form>
 
 {% endblock content %}

@@ -6,7 +6,7 @@
             <div class="avatar">
                 <img src="{{ question.author.avatar.url }}" alt="" />
             </div>
-            {% with rating=question.rating %}
+            {% with item=question%}
                 {% include 'inc/rating.html' %}
             {% endwith %}
         </div>

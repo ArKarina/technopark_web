@@ -1,81 +1,11 @@
 {% extends "inc/base.html" %}
+{% load bootstrap5 %}
 
 {% block content %}
 
-<form class="question-form">
-    <div class="row form-elem">
-        <div class="col-2">
-            <label for="validationServer01" class="form-label">Login</label>
-        </div>
-        <div class="col-5">
-            <input type="text" class="form-control is-valid" id="validationServer01"
-            placeholder="karina" required placeholder="Enter your login...">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-2">
-            <label for="validationServer02" class="form-label">Email</label>
-        </div>
-        <div class="col-5">
-            <input type="email" class="form-control is-invalid" id="validationServer02"
-            placeholder="qwe@bk.ru" required placeholder="Enter your email...">
-            <p class="invalid-feedback">
-                This email address already registered!
-            </p>
-        </div>
-    </div>
-
-    <div class="row form-elem">
-        <div class="col-2">
-            <label for="validationServer03" class="form-label">NickName</label>
-        </div>
-        <div class="col-5">
-            <input type="text" class="form-control is-valid" id="validationServer03"
-            placeholder="karina" required placeholder="Enter your nickname...">
-        </div>
-    </div>
-
-    <div class="row form-elem">
-        <div class="col-2">
-            <label for="validationServer04" class="form-label">Password</label>
-        </div>
-        <div class="col-5">
-            <input type="password" class="form-control is-valid" id="validationServer04"
-            placeholder="karina" required placeholder="Enter your password...">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-2">
-            <label for="validationServer05" class="form-label">Repeat password</label>
-        </div>
-        <div class="col-5">
-            <input type="password" class="form-control is-invalid" id="validationServer05"
-            placeholder="karina" required placeholder="Enter your password again...">
-            <p class="invalid-feedback">
-                Passwords don't match!
-            </p>
-        </div>
-    </div>
-
-    <div class="row form-elem" style="margin-bottom: 10px;">
-        <div class="col-2">
-            <label for="validationServer06" class="form-label">Upload avatar</label>
-        </div>
-        <div class="col-5">
-            <input type="file" class="form-control is-valid" id="validationServer06" name="photo"
-                   multiple accept="image/*,image/jpeg">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-10">
-            <button class="btn btn-success" type="submit">Register!</button>
-        </div>
-    </div>
-
+<form class="question-form" novalidate action="/signup" method="post">
+    {% bootstrap_form form %}
+    <button class="btn btn-success" type="submit">Register!</button>
 </form>
 
 {% endblock content %}

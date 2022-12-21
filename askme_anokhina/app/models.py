@@ -4,7 +4,7 @@ from django.utils.timezone import now
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    avatar = models.ImageField(blank=True, null=True, default='img/avatar_1.jpg', upload_to='static/img/%y/%m/%d/', verbose_name='avatar')
+    avatar = models.ImageField(blank=True, null=True, default='static/img/avatar_1.jpg', upload_to='media/avatar/%y/%m/%d/', verbose_name='avatar')
 
     def __str__(self):
         return self.user.username
@@ -45,8 +45,8 @@ class QuestionLike(models.Model):
         super(QuestionLike, self).delete(*args, **kwargs)
     
     def change_like_flag(self):
-        if self.like_flag: self.question.rating += 2
-        else: self.question.rating -= 2
+        if self.like_flag: self.question.rating -= 2
+        else: self.question.rating += 2
         self.like_flag = not self.like_flag
         self.save()
         self.question.save()
@@ -101,8 +101,8 @@ class AnswerLike(models.Model):
         super(AnswerLike, self).delete(*args, **kwargs)
     
     def change_like_flag(self):
-        if self.like_flag: self.answer.rating += 2
-        else: self.answer.rating -= 2
+        if self.like_flag: self.answer.rating -= 2
+        else: self.answer.rating += 2
         self.like_flag = not self.like_flag
         self.save()
         self.answer.save()
@@ -132,3 +132,8 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.title
+
+    def change_status(self):
+        if self.status == 'Correct': self.status = 'Incorrect'
+        else: self.status = 'Correct'
+        self.save()
