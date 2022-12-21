@@ -1,0 +1,12 @@
+{% extends "inc/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+
+<form class="question-form" novalidate action="/ask" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button class="btn btn-success" type="submit">ASK!</button>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,9 @@
+<div class="rating">
+    <p class="rating-btn" data-id="{{ item.id }}" data-action="like">
+        <input type="button" value="&#x2764;" />
+    </p>
+    <div  id="rating-{{ item.id }}" class="likes">{{ item.rating }}</div>
+    <p class="rating-btn" data-id="{{ item.id }}" data-action="dislike">
+        <input type="button" value="&#128078;" />
+    </p>
+</div>

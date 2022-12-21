@@ -1,0 +1,11 @@
+{% extends "inc/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+
+<form class="question-form" novalidate action="/signup" method="post">
+    {% bootstrap_form form %}
+    <button class="btn btn-success" type="submit">Register!</button>
+</form>
+
+{% endblock content %}

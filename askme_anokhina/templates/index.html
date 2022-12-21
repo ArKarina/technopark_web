@@ -1,0 +1,16 @@
+{% extends "inc/base.html" %}
+
+{% block content %}
+
+<div class="row-two-elems">
+    <div class="row"><h1>New questions</h1></div>
+    <div class="hot-questions"><a href="{% url 'hot' %}">Hot Questions</a></div>
+</div>
+
+{% for question in page.object_list %}
+    {% include 'inc/question_item.html' %}
+{% endfor %}
+
+{% include 'inc/paginator.html' %}
+
+{% endblock content %}
